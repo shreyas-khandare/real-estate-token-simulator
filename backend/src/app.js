@@ -11,10 +11,12 @@ const app = express();
 // CORS
 app.use(cors({
   origin: [
-    "http://localhost:5173",
-    "http://localhost:3000",
-    process.env.FRONTEND_URL
+    "https://real-estate-token-simulator.vercel.app", // production
+    "http://localhost:5173", // Vite local
+    "http://localhost:3000", // CRA / Next local
   ],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 }));
 
@@ -27,7 +29,7 @@ app.use(tokenRoutes);
 app.use(portfolioRoutes);
 app.use(insightRoutes);
 
-// Health / root
+// Health
 app.get("/", (req, res) => {
   res.send("Asset simulator backend running");
 });
