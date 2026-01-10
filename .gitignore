@@ -1,0 +1,20 @@
+# Node related
+**/node_modules
+**/dist
+**/build
+
+# Env secrets (important)
+backend/.env
+frontend/.env
+
+# Local logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor files
+.DS_Store
+.vscode
+.idea
