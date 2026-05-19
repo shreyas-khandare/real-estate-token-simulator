@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import { clerkMiddleware } from "@clerk/express";
 
 import assetRoutes from "./routes/asset.routes.js";
 import tokenRoutes from "./routes/token.routes.js";
@@ -11,9 +12,9 @@ const app = express();
 // CORS
 app.use(cors({
   origin: [
-    "https://real-estate-token-simulator.vercel.app", // production
-    "http://localhost:5173", // Vite local
-    "http://localhost:3000", // CRA / Next local
+    "https://real-estate-token-simulator.vercel.app",
+    "http://localhost:5173",
+    "http://localhost:3000",
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
@@ -22,6 +23,9 @@ app.use(cors({
 
 // JSON
 app.use(express.json());
+
+// Clerk middleware
+app.use(clerkMiddleware());
 
 // Routes
 app.use("/assets", assetRoutes);
