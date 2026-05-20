@@ -15,6 +15,7 @@ app.use(cors({
     "https://real-estate-token-simulator.vercel.app",
     "http://localhost:5173",
     "http://localhost:3000",
+    /\.vercel\.app$/,
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
