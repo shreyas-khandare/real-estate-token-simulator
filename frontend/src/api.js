@@ -1,10 +1,10 @@
 import { useAuth } from "@clerk/clerk-react";
 
 // Local backend
-const BASE = "http://localhost:3000";
+// const BASE = "http://localhost:3000";
 
 // Production later:
-// const BASE = import.meta.env.VITE_API_BASE_URL;
+const BASE = import.meta.env.VITE_API_BASE_URL;
 
 // Normal public API
 export async function api(path, options = {}) {
