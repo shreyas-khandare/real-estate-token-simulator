@@ -13,16 +13,6 @@ This project simulates how tokenized real-estate investment platforms work using
 
 ---
 
-# Live Demo
-
-## Frontend
-:contentReference[oaicite:0]{index=0}
-
-## Backend API
-:contentReference[oaicite:1]{index=1}
-
----
-
 # Features
 
 ## Authentication
